@@ -2,6 +2,6 @@
 FROM ubuntu:latest
 MAINTAINER nivi11<nivaae@gmail.com>
 RUN apt-get update -y
-RUN install apache2 -y
+RUN apt-get install apache2 -y
 EXPOSE 80 8081
 VOLUME ["/demo/test.html"]
