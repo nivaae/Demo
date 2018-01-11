@@ -37,13 +37,13 @@
 	<repository>
 		<id>tata</id>
 		<name>Internal Releases</name>
-		<url>http://35.225.181.36:8081/nexus/content/repositories/release/</url>
+		<url>http://52.201.47.24:8081/nexus-2.14.5-02/content/repositories/releases/</url>
 	</repository>
  
 	<snapshotRepository>
 		<id>tata</id>
 		<name>Internal Releases</name>
-		<url>http://http://35.225.181.36:8081/nexus/content/repositories/snapshot/</url>
+		<url>http://52.201.47.24:8081/nexus-2.14.5-02/content/repositories/snapshots/</url>
 	</snapshotRepository>
 
 </distributionManagement>
