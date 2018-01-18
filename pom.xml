@@ -88,7 +88,6 @@
                 </executions>
             </plugin>
         </plugins>
- <distributionManagement>
 	<repository>
 		<id>tata</id>
 		<name>Internal Releases</name>
@@ -100,7 +99,5 @@
 		<name>Internal Releases</name>
 		<url>http://34.202.154.16:8081/nexus-2.14.5-02/content/repositories/snapshots/</url>
 	</snapshotRepository>
-
-</distributionManagement>
 </build>
 </project>
