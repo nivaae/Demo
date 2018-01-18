@@ -18,6 +18,44 @@
   <build>
         <plugins>
 		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.1</version>
+			<configuration>
+            <!-- archiveClasses>true</archiveClasses Enable this line will remove compiled classes from package -->
+            <!-- packagingExcludes>view/test/**,WEB-INF/classes/**</packagingExcludes Does not work -->
+            <packagingExcludes>view/test/**</packagingExcludes>
+            <webResources>
+                <resource>
+                    <directory>src/main/webapp/</directory>
+                    <filtering>false</filtering>
+                    <includes>
+                        <include>**/**</include>
+                    </includes>
+                </resource>
+                <resource>
+                    <directory>resources/</directory>
+                    <targetPath>WEB-INF/classes</targetPath>
+                    <filtering>false</filtering>
+                    <!-- excludes><exclude>**</exclude></excludes Does not work -->
+                    <includes>
+                        <include>ehcache.xml</include>
+                        <include>${include.files}</include>
+                    </includes>
+                </resource>
+            </webResources>
+            <includeEmptyDirectories>true</includeEmptyDirectories>
+        </configuration>
+			<executions>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>war</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -67,27 +105,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fix-output</id>
-                        <phase>process-classes</phase>
-                        <configuration>
-                            <tasks>
-                               <!-- Change this if you set the final name yourself: -->
-                                <property name="d" location="${basedir}/target/${project.artifactId}-${project.version}"/>
-                                <copy todir="${d}">
-                                    <fileset dir="${basedir}/target/executable-war" includes="**/*"/>
-                                </copy>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+		    </plugins>
+	</build>
+      <distributionManagement>
 	<repository>
 		<id>tata</id>
 		<name>Internal Releases</name>
@@ -99,5 +119,6 @@
 		<name>Internal Releases</name>
 		<url>http://34.202.154.16:8081/nexus-2.14.5-02/content/repositories/snapshots/</url>
 	</snapshotRepository>
+	      </distrubutionManagement>
 </build>
 </project>
