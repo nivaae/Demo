@@ -19,6 +19,7 @@
   <build>
 	<plugins>
 		<plugin>
+			<groupId>org.apache.maven.plugins:maven-javadoc-plugin:3.2.0</groupId>
 			<artifactId>maven-war-plugin</artifactId>
 			<version>3.2.0</version>
 			<executions>
