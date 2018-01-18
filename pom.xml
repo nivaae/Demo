@@ -23,8 +23,30 @@
 			<artifactId>maven-war-plugin</artifactId>
 			<version>2.1</version>
 			<configuration>
-        <warSourceExcludes>pom.xml</warSourceExcludes>
-                        </configuration>
+            <!-- archiveClasses>true</archiveClasses Enable this line will remove compiled classes from package -->
+            <!-- packagingExcludes>view/test/**,WEB-INF/classes/**</packagingExcludes Does not work -->
+            <packagingExcludes>view/test/**</packagingExcludes>
+            <webResources>
+                <resource>
+                    <directory>src/main/webapp/</directory>
+                    <filtering>false</filtering>
+                    <includes>
+                        <include>**/**</include>
+                    </includes>
+                </resource>
+                <resource>
+                    <directory>resources/</directory>
+                    <targetPath>WEB-INF/classes</targetPath>
+                    <filtering>false</filtering>
+                    <!-- excludes><exclude>**</exclude></excludes Does not work -->
+                    <includes>
+                        <include>ehcache.xml</include>
+                        <include>${include.files}</include>
+                    </includes>
+                </resource>
+            </webResources>
+            <includeEmptyDirectories>true</includeEmptyDirectories>
+        </configuration>
 			<executions>
 				<execution>
 					<id>attach-javadocs</id>
