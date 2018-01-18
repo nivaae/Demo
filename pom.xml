@@ -20,11 +20,12 @@
 	<plugins>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
+			<version>3.2.0</version>
 			<artifactId>maven-war-plugin</artifactId>
-			version>3.2.0</version>
         <configuration>
           <webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
-        </configuration><executions>
+        </configuration>
+			<executions>
 				<execution>
 					<id>attach-javadocs</id>
 					<goals>
