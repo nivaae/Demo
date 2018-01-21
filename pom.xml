@@ -71,8 +71,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<name>simple-web-app</name>
-	</build>
 	
 	<distributionManagement>
 	<repository>
