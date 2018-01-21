@@ -50,7 +50,7 @@
 				<execution>
 					<id>attach-javadocs</id>
 					<goals>
-						<goal>war</goal>
+						<goal>run</goal>
 					</goals>
 				</execution>
 			</executions>
