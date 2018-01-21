@@ -87,9 +87,9 @@
                     <execution>
                         <id>make-executable</id>
                         <phase>generate-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
+                                        <goals>
+						<goal>jar</goal>
+					</goals>
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
