@@ -106,7 +106,6 @@
             </plugin>
             <plugin>
 		    </plugins>
-	</build>
       <distributionManagement>
 	<repository>
 		<id>tata</id>
